@@ -108,7 +108,7 @@ sudo anchor build
 
 ### Lo subimos a la red solana
 ``` 
-sudo anchor build
+sudo anchor deploy
 ```
 
 # Front End con Vuew
@@ -127,3 +127,11 @@ No olvidar copiar el idl generado
 ``` 
 npm run serve
 ```
+
+### Generar el código de producción
+
+``` 
+npm run build
+
+```
+Entramos a la carpeta dist y ese código lo podemos subir al github pages para que quede listo corriendo en servidor

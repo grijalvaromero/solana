@@ -3,7 +3,7 @@ import { Post } from '@/models'
 import { web3 } from '@project-serum/anchor'
 import { memcmphHashtag, memcmpAuthor, memcmphDay } from "@/helpers/filterMemcm";
 
-const walletCollector = 'DUTssi76Gv6s7ymz1xH9HiemqCWSSRFMXiU8twNZYnc3';
+const walletCollector = 'Fzd7o3334mVZ93suDdrLrCyGHU2puQwFVj5T3fZuvman';
 const tipNewPost = 0.001 * web3.LAMPORTS_PER_SOL
 
 export const loadPost = async ({ commit }, { wallet, hashtag, vecDay }) => {

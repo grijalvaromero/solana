@@ -21,7 +21,7 @@
     "bootstrap-icons": "^1.9.1",
 
     "solana-wallets-vue": "^0.5.2",
-     "@solana/web3.js": "^1.66.2", 
+    "@solana/web3.js": "^1.66.2", 
     "@solana/wallet-adapter-wallets": "^0.19.5",
    
     "@project-serum/anchor": "^0.21.0"
