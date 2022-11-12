@@ -1,5 +1,6 @@
 
 export const loadPosts = (state, posts) => {
+    console.log(posts);
     state.posts = [...posts]
 }
 

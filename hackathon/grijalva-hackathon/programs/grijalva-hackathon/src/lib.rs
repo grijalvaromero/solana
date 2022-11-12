@@ -10,7 +10,7 @@ pub use crate::ctx::*;
 mod err;
 pub use crate::err::ErrorCode;
 
-declare_id!("Axjz97ru6cYMPJ1aKfMZNrrA8M9WzFQs5P7YDFGng8RG");
+declare_id!("5ZzXyJwBtfQ7cZ1Pt2qfVFGoPuxYS5xK926sg2wnH41q");
 
 #[program]
 pub mod miprograma {

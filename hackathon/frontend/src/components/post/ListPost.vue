@@ -1,22 +1,46 @@
 
 <template>
-  <CardPost v-for="post in posts" :key="post.key" :post="post" />
+  
+  <div>
+    <button class="btn btn-success" @click="recargar()">
+      REFRESH
+    </button>
+    <div v-for="post in results" :key="post.key" >
+      <p>{{ JSON.stringify(post) }}</p>
+    </div>
+    <div>{{ JSON.stringify(posts) }}</div>
+  </div>
 </template>
 
 <script>
-import CardPost from "@/components/post/CardPost.vue";
-
-import { computed } from "vue";
 import { useStore } from "vuex";
-
+import { computed } from "vue";
 export default {
-  components: { CardPost },
-
-  setup() {
-    const store = useStore();
-
+  components: {  },
+  data(){
     return {
-      posts: computed(() => store.getters["juno/getPosts"]),
+        results:[]
+    }
+
+  },
+ async mounted(){
+    
+  },
+  methods:{
+      async recargar(){
+        
+      
+      }
+    },
+ async setup() {
+      const store = useStore();
+        let post2 =  computed(() => store.getters["getAll"])
+        //console.log(post2);
+        //let post = [{a:"a",key:"1"}]
+       
+   
+    return {
+        posts:post2
     };
   },
 };

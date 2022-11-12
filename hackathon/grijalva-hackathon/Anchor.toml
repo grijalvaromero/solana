@@ -2,10 +2,10 @@
 seeds = false
 skip-lint = false
 [programs.devnet]
-grijalva_hackathon = "Axjz97ru6cYMPJ1aKfMZNrrA8M9WzFQs5P7YDFGng8RG"
+grijalva_hackathon = "5ZzXyJwBtfQ7cZ1Pt2qfVFGoPuxYS5xK926sg2wnH41q"
 
 [registry]
-url = "https://api.apr.dev"
+url = "https://anchor.projectserum.com"
 
 [provider]
 cluster = "devnet"

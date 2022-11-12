@@ -5,7 +5,23 @@ import { memcmphHashtag, memcmpAuthor, memcmphDay } from "@/helpers/filterMemcm"
 
 const walletCollector = 'Fzd7o3334mVZ93suDdrLrCyGHU2puQwFVj5T3fZuvman';
 const tipNewPost = 0.001 * web3.LAMPORTS_PER_SOL
+export const loadPost2 = async({ commit })=>{
+    const { program, connection } = useWorkspace()
 
+    const postClient = program.value.account.post
+    const postAccountName = postClient._idlAccount.name
+
+    const postDiscriminatorFilter = {
+        memcmp: postClient.coder.accounts.memcmp(postAccountName)
+    }
+    let filters = []
+    const allPosts = await connection.getProgramAccounts(program.value.programId, {
+        filters: [postDiscriminatorFilter, ...filters],
+        dataSlice: { offset: 41, length: 6 },
+    })
+    //console.log(allPosts)
+    commit('loadPosts', allPosts)
+}
 export const loadPost = async ({ commit }, { wallet, hashtag, vecDay }) => {
 
     let filters = []
@@ -34,7 +50,7 @@ export const loadPost = async ({ commit }, { wallet, hashtag, vecDay }) => {
         pubkey,
         date: Date.UTC(...account.data),
     }))
-
+    
     const slicePublicKeys = []
     allPostsWithTimestamps
         .sort((a, b) => {
